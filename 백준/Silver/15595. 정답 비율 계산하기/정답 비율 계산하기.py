@@ -14,14 +14,14 @@ for _ in range(n):
     if user_id == "megalusion":
         continue
 
-    # 사용자별 틀린 횟수 추적
     if user_id not in user_attempts:
         user_attempts[user_id] = 0
 
-    if result == 4:  # 정답 제출
+    if result == 4:
         correct_users.add(user_id)
-    else:  # 오답 제출
-        if user_id not in correct_users:  # 이미 맞힌 사람은 틀린 횟수 추가 안 함
+    else:
+        # 이미 맞힌 사람은 틀린 횟수 추가 안 함
+        if user_id not in correct_users:
             user_attempts[user_id] += 1
 
 # 문제를 맞힌 사용자 수와 틀린 횟수 합산
