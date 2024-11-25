@@ -2,8 +2,11 @@
 n = int(input())
 
 # 데이터 저장
-user_attempts = {}  # 사용자별 틀린 횟수 기록
-correct_users = set()  # 문제를 맞힌 사용자 기록
+
+# 사용자별 틀린 횟수 기록
+user_attempts = {}  
+# 문제를 맞힌 사용자 기록
+correct_users = set()
 
 for _ in range(n):
     # 입력 파싱
