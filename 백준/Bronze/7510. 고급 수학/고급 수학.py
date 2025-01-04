@@ -1,31 +1,19 @@
 import math
 
 n = int(input())
-i = 1
 
-for i in range(n):
-    # 리스트 초기화
-    li_len = list()
-    i += 1
-    
-    # 값 입력받기
+for i in range(1, n + 1):
+    # 세 변의 길이 입력받기
     a, b, c = map(int, input().split())
-    li_len.append(a)
-    li_len.append(b)
-    li_len.append(c)
     
-    # 리스트 sort
-    li_len.sort()
+    # 가장 긴 변과 나머지 두 변을 찾기
+    li_len = sorted([a, b, c])
+    a, b, c = li_len[0], li_len[1], li_len[2]
     
-    # 계산 & 출력
-    if li_len[2] == math.sqrt((li_len[0] ** 2) + (li_len[1]) ** 2):
-        print(f'Scenario #{i}:')
-        print('yes')
-        print()
-    
+    # 피타고라스 정리 확인
+    if c == math.sqrt(a ** 2 + b ** 2):
+        print(f"Scenario #{i}:")
+        print("yes\n")
     else:
-        print(f'Scenario #{i}:')
-        print('no')
-        print()
-    
-    i += 1
+        print(f"Scenario #{i}:")
+        print("no\n")
